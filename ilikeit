@@ -3,7 +3,7 @@ This to record the current screen
 ffmpeg -f alsa -ac 2 -i pulse -f x11grab -r 30 -s 1366x768 -i :0.0 -acodec pcm_s16le -vcodec libx264 -preset ultrafast -crf 0 -threads 0 lec1.mkv
 ffmpeg -y -framerate 25 -video_size 1366x768 -f x11grab -i :0.0 -c:v libx264rgb -crf 0 -preset ultrafast temp.mp4
 ffmpeg -i lec1.mkv -c:v libx264 -crf 23 -preset medium -vf format=yuv420p test.mp4           
-
+ffmpeg -i input.mp4 -vcodec libx265 -crf 28 output.mp4
 and to play
 
 ffplay filename
